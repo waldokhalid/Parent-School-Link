@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:route_transitions/route_transitions.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'login_screen.dart';
 import 'signup_screen.dart';
@@ -24,6 +25,7 @@ class StartScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
+              
               flex: 2,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -35,6 +37,7 @@ class StartScreen extends StatelessWidget {
                     children: [
                       GradientText(
                         "School Link",
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.lexendMega(
                           fontWeight: FontWeight.bold,
                           fontSize: 36,
@@ -92,10 +95,12 @@ class StartScreen extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(
-                            context,
-                            LoginScreen.idScreen,
-                          );
+                          // Navigator.pushNamed(
+                          //   context,
+                          //   LoginScreen.idScreen,
+                          // );
+                          slideLeftWidget(
+                              newPage: LoginScreen(), context: context);
                         },
                         child: Text(
                           "Sign In",
@@ -116,10 +121,12 @@ class StartScreen extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(
-                            context,
-                            SignUpScreen.idScreen,
-                          );
+                          // Navigator.pushNamed(
+                          //   context,
+                          //   SignUpScreen.idScreen,
+                          // );
+                          slideLeftWidget(
+                              newPage: SignUpScreen(), context: context);
                         },
                         child: Text(
                           "Sign Up",

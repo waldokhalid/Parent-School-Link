@@ -73,6 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   GradientText(
                     "School Link",
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.lexendMega(
                       fontWeight: FontWeight.bold,
                       fontSize: 36,

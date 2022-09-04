@@ -23,10 +23,10 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.yellow[400],
         title: Text(
           "Reset Password",
           style: GoogleFonts.lexendMega(
@@ -36,7 +36,6 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
       ),
       body: Container(
-        color: Colors.yellow[400],
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +44,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 "Enter Email. We will send you a PASSWORD reset email.",
                 style: GoogleFonts.lexendMega(
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 12,
                 ),
                 textAlign: TextAlign.center,
@@ -68,17 +67,17 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                     labelText: "Email",
                     labelStyle: GoogleFonts.lexendMega(
                       fontSize: 12,
-                      color: Colors.black,
+                      color: Colors.grey[200],
                     ),
                     hintStyle: GoogleFonts.lexendMega(
-                      color: Colors.black,
+                      color: Colors.grey[200],
                       fontSize: 12,
                     ),
                     hintText: "Email",
                   ),
                   style: GoogleFonts.lexendMega(
                     fontSize: 12,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   onChanged: (value) {
                     setState(

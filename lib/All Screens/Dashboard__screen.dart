@@ -5,6 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
+import 'package:route_transitions/route_transitions.dart';
+
 import '../services/local_push_notifications.dart';
 import 'announcements_Screen.dart';
 import 'grades_screen.dart';
@@ -324,12 +326,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 6,
-                    blurRadius: 6,
-                    offset: Offset(0, 0), 
-                    blurStyle: BlurStyle.outer// changes position of shadow
-                  ),
+                      color: Colors.grey.withOpacity(0.2),
+                      spreadRadius: 6,
+                      blurRadius: 6,
+                      offset: Offset(0, 0),
+                      blurStyle: BlurStyle.outer // changes position of shadow
+                      ),
                 ],
               ),
               width: (MediaQuery.of(context).size.width) / 2.5,
@@ -353,6 +355,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 onTap: () {
                   // Navigator.pushNamed(context, MainScreen.idScreen);
                   Null;
+                  Fluttertoast.showToast(
+                    msg: "Current Not Available",
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    gravity: ToastGravity.CENTER,
+                  );
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -361,14 +369,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       Radius.circular(15),
                     ),
                     boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 6,
-                    blurRadius: 6,
-                    offset: Offset(0, 0), 
-                    blurStyle: BlurStyle.outer// changes position of shadow
-                  ),
-                ],
+                      BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 6,
+                          blurRadius: 6,
+                          offset: Offset(0, 0),
+                          blurStyle:
+                              BlurStyle.outer // changes position of shadow
+                          ),
+                    ],
                   ),
                   height: (MediaQuery.of(context).size.height) / 6.5,
                   width: (MediaQuery.of(context).size.width) / 3,
@@ -390,7 +399,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, HomeworkScreen.idScreen);
+                      // Navigator.pushNamed(context, HomeworkScreen.idScreen);
+                      slideLeftWidget(
+                          newPage: HomeworkScreen(), context: context);
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -399,14 +410,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           Radius.circular(15),
                         ),
                         boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 6,
-                    blurRadius: 6,
-                    offset: Offset(0, 0), 
-                    blurStyle: BlurStyle.outer// changes position of shadow
-                  ),
-                ],
+                          BoxShadow(
+                              color: Colors.grey.withOpacity(0.2),
+                              spreadRadius: 6,
+                              blurRadius: 6,
+                              offset: Offset(0, 0),
+                              blurStyle:
+                                  BlurStyle.outer // changes position of shadow
+                              ),
+                        ],
                       ),
                       height: (MediaQuery.of(context).size.height) / 15,
                       width: (MediaQuery.of(context).size.width) / 3,
@@ -426,7 +438,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   SizedBox(height: 10),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, GradesSreen.idScreen);
+                      // Navigator.pushNamed(context, GradesSreen.idScreen);
+                      slideRightWidget(
+                          newPage: GradesSreen(), context: context);
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -435,14 +449,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           Radius.circular(15),
                         ),
                         boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 6,
-                    blurRadius: 6,
-                    offset: Offset(0, 0), 
-                    blurStyle: BlurStyle.outer// changes position of shadow
-                  ),
-                ],
+                          BoxShadow(
+                              color: Colors.grey.withOpacity(0.2),
+                              spreadRadius: 6,
+                              blurRadius: 6,
+                              offset: Offset(0, 0),
+                              blurStyle:
+                                  BlurStyle.outer // changes position of shadow
+                              ),
+                        ],
                       ),
                       height: (MediaQuery.of(context).size.height) / 15,
                       width: (MediaQuery.of(context).size.width) / 3,
@@ -468,10 +483,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(
-                    context,
-                    AnnouncementScreen.idScreen,
-                  );
+                  // Navigator.pushNamed(
+                  //   context,
+                  //   AnnouncementScreen.idScreen,
+                  // );
+                  slideLeftWidget(
+                      newPage: AnnouncementScreen(), context: context);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -480,14 +497,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       Radius.circular(15),
                     ),
                     boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 6,
-                    blurRadius: 6,
-                    offset: Offset(0, 0), 
-                    blurStyle: BlurStyle.outer// changes position of shadow
-                  ),
-                ],
+                      BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 6,
+                          blurRadius: 6,
+                          offset: Offset(0, 0),
+                          blurStyle:
+                              BlurStyle.outer // changes position of shadow
+                          ),
+                    ],
                   ),
                   height: (MediaQuery.of(context).size.height) / 6.5,
                   width: (MediaQuery.of(context).size.width) / 3,
@@ -506,10 +524,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(
-                    context,
-                    SchoolFeesScreen.idScreen,
-                  );
+                  // Navigator.pushNamed(
+                  //   context,
+                  //   SchoolFeesScreen.idScreen,
+                  // );
+                  slideRightWidget(
+                      newPage: SchoolFeesScreen(), context: context);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -518,14 +538,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       Radius.circular(15),
                     ),
                     boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 6,
-                    blurRadius: 6,
-                    offset: Offset(0, 0), 
-                    blurStyle: BlurStyle.outer// changes position of shadow
-                  ),
-                ],
+                      BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 6,
+                          blurRadius: 6,
+                          offset: Offset(0, 0),
+                          blurStyle:
+                              BlurStyle.outer // changes position of shadow
+                          ),
+                    ],
                   ),
                   height: (MediaQuery.of(context).size.height) / 6.5,
                   width: (MediaQuery.of(context).size.width) / 3,
