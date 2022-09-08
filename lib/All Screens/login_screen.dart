@@ -307,6 +307,7 @@ class _LoginScreenState extends State<LoginScreen> {
         msg:
             "Login Not Successful. Either Provided credentials are wrong or Email has not been verified.",
         gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 3,
       );
     }
   }
